@@ -17,8 +17,18 @@ Forma.addEventListener("submit", (e)=>{
 //Creating the function which will recive userinput value as parametar and proces it and added it into the selected list. 
 function kreirajItem(x){
   //Creating the variavle which held the html markup and in which I pased the parametar which is pased form calling the function and wich held the value of input. Here i use template literals and this enables me to on easy way use the html and valiable or js code
-  let html = `<li>${x} <button>Delete</button></li>`
+  //Here inside the temlate literals i added to the button element onclick argument and I called the function which I created below and wich will be charge to delete item from DOM. In the calling fucniton I pase the argument and argument is the This keyword which will held information about the item user was cilcked the delete button. Becaouse of this keyword our function will know whic item to delete
+  let html = `<li>${x} <button onclick="brisanjeItema(this)">Delete</button></li>`
   //Here I selected the ul list which I selected from dom on top and stored in the variable lista. After that i added the vanila js functioj insertAdjacentHTML which inserts html into selected element. This function had to have the 2 parametars first is the place where the element will be put in our cease it is the beforeend which will added element on the end, and the second parametar is the content of that elemen we here put the variable html wich held the html markup and pased value from input field
   lista.insertAdjacentHTML("beforeend",html );
+  //Whith this I seleceted the input field and asigned its value an empty string. Wiht this every time after submit the input field will be empty
+  polje.value = "";
+  //Here I on the selected field adding the vanila JS function focus which will focus the field after submition. Whit this user will not have to again click on the input button to type another to do
+  polje.focus();
 
+}
+//Creating the function for delete element from DOM. Because I pased in the call of funstion argument of this keyword which will hellp me to know on which element user was clicked and to delete that item
+function brisanjeItema(elementToDelete){
+  //Here I call the parameter from function and I chain the parentElement because I do not want to delete just the delete button but I want to delete whole li html item. The parentElement will select the parent element of the this item (button) and that is my li html element. After that I call the vanila JS function remove which will remove the selected element
+  elementToDelete.parentElement.remove()
 }
