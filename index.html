@@ -5,23 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Simple To Do App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-  <h1>To-Do App</h1>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Simple To Do app</h1>
+      <p class="lead">This is a simple To Do app which have function to pase your input in the dom.</p>
+      <hr class="my-4">
+      <p>Also you can the delete the tasks you entered</p>
+      
+    </div>
+  
 
   <form action="" id="Forma">
-   <input id="polje" type="text" autocomplete="off">
-   <button>Create item</button>
+    <div class="form-group">
+      <input id="polje" class="form-control" type="text" autocomplete="off">
+    </div>
+   
+   <button class="btn btn-primary">Create item</button>
 
   </form>
 
-  <h3>Need to do</h3>
+  <h3>Need to do:</h3>
 
-  <ul id="lista">
+  <ul id="lista"  class="list-group">
     
   </ul>
-
+</div>
 <script src="app.js"></script>
 </body>
 </html>
